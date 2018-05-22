@@ -2,11 +2,10 @@
 
 |Coulumn|Type|Options|
 |-------|----|-------|
-|body|text|foreign_key: true|
-|image|string|foreign_key: true|
+|body|text||
+|image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|timestamp|integer|null: false|
 
 ### Association
 - belong to :group
@@ -16,15 +15,13 @@
 
 |Coulumn|Type|Options|
 |-------|----|-------|
-|name|text|null: false, unique: true, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|text|null: false, unique: true|
 
 ## userテーブル
 
 |Coulumn|Type|Options|
 |-------|----|-------|
-|name|text|null: false, unique: true, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|name|text|null: false, unique: true|
 
 ## memberテーブル
 
