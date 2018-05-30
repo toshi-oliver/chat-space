@@ -1,7 +1,7 @@
 .wrapper{
   .main {
       width: calc(100vw - 300px);
-      height: 100vw;
+      height: 100vh;
       float: right;
 
     .main__top {
@@ -50,7 +50,7 @@
     }
 
     &__body {
-      height: calc(100% - 100px - 90px - 46px);
+      height: calc(100vh - 100px - 90px - 46px);
       padding: 46px 40px 0;
       background-color: $white;
       overflow: scroll;
@@ -82,7 +82,7 @@
     }
     &__footer {
       height: 90px ;
-      padding: 20px 0px;
+
 
       form {
       background-color: $pale_gray;
