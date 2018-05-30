@@ -1,0 +1,57 @@
+.wrapper {
+    .side{
+      width: 300px;
+      height: 100vw;
+      float: left;
+      color: $white;
+
+      &__top {
+        height: 100px;
+        background-color: $more_dark_blue;
+        padding: 0 20px;
+        line-height: 100px;
+
+        &__user-name {
+          float: left;
+        }
+
+        &__icons {
+          float: right;
+
+          a {
+            color: $white;
+            text-decoration: none;
+          }
+        }
+      }
+
+      &__bottom {
+        height: calc(100%);
+        background-color: $less_dark_blue;
+        padding: 0 20px;
+        overflow: scroll;
+        width: 260px;
+
+
+        &__group-name {
+          font-size: 15px;
+          padding: 20px 0px 5px ;
+        }
+
+        &__group-new-comment {
+          font-size: 11px;
+          padding: 20px 0px;
+        }
+
+        &__group-name {
+          font-size: 15px;
+          padding: 20px 0px 5px ;
+        }
+
+        &__group-new-comment {
+          font-size: 11px;
+          padding: 20px 0px;
+        }
+      }
+    }
+}
