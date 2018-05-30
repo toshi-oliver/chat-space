@@ -1,0 +1,68 @@
+.wrapper
+  .main
+    .main__top
+      .main__top__left
+        .main__top__group-name
+          Sampleグループ
+        .main__top__member-list
+          Member:Sample
+      .main__top__right
+        = link_to 'Edit', "#", class: "group-edit"
+      
+    .main__body
+      .main__body__message
+        .main__body__user-name
+          ユーザー1
+        .main__body__posted-time
+          2018/XX/XX XX:XX:XX
+        .main__body__user-comment
+          こんにちは
+      .main__body__message
+        .main__body__user-name
+          ユーザー2
+        .main__body__posted-time
+          2018/XX/XX XX:XX:XX
+        .main__body__user-comment
+          こんにちは
+
+    .main__footer
+      %form
+        %input.message-content{type: "text", placeholder: "type a message"}
+        %input.submit{type: "submit", value: "Send"}
+        %label
+          %input.picture{type: "file"}
+            %i.fa.fa-image
+
+  .side
+    .side__top
+      %h4.side__top__user-name
+        sample
+      .side__top__icons
+        = link_to "#" do
+          %i.fa.fa-edit
+        = link_to "#" do
+          %i.fa.fa-cog
+
+
+    .side__bottom
+      .side__bottom__group-name
+        Sampleグループ1
+      .side__bottom__group-new-comment
+        こんにちは
+      .side__bottom__group-name
+        Sampleグループ2
+      .side__bottom__group-new-comment
+        こんにちは
+
+
+
+  / <header class="header">
+  /   <div class="left-header">
+  /     <h1 class="user-name">ryosukemaehara</h1>
+  /   </div>
+  /   <div class="right-header">
+  /     <h1 class="group-name">Sampleグループ</h1>
+  /     <h5 class="member-name">Member:ryosukemaehara</h5>
+  /   </div>
+  / </header>
+
