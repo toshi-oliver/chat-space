@@ -10,7 +10,6 @@
       background-color: $white;
       padding: 0 40px;
 
-
       .main__top__left {
         @include clearfix();
         width: 50%;
@@ -21,7 +20,6 @@
           font-size: 20px;
           color: $black;
           padding: 35px 0px 15px;
-
         }
 
         .main__top__member-list {
@@ -55,7 +53,7 @@
       background-color: $white;
       overflow: scroll;
 
-      .main__body__message {
+      .main__body__messages {
         padding-bottom: 46px;
 
         .main__body__user-name {
@@ -72,7 +70,7 @@
           float: left;
         }
 
-        .main__body__user-comment {
+        .main__body__user-message {
           font-size: 14px;
           color: $deep_blue;
           clear: both;
