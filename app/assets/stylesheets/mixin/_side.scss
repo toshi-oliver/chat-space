@@ -1,5 +1,5 @@
 .wrapper {
-  .side{
+  .side {
     width: 300px;
     height: 100vh;
     float: left;
@@ -32,14 +32,14 @@
       overflow: scroll;
       width: 260px;
 
-      .side__bottom__message {
+      .side__bottom__group {
 
         .side__bottom__group-name {
           font-size: 15px;
           padding: 20px 0px 5px ;
         }
 
-        .side__bottom__group-new-comment {
+        .side__bottom__group-comment {
           font-size: 11px;
           padding: 20px 0px;
         }
