@@ -5,7 +5,7 @@
     float: left;
     color: $white;
 
-    &__top {
+    .side__top {
       height: 100px;
       background-color: $more_dark_blue;
       padding: 0 20px;
@@ -15,7 +15,7 @@
         float: left;
       }
 
-      .side__top____icons {
+      .side__top__icons {
         float: right;
 
         a {
@@ -25,22 +25,24 @@
       }
     }
 
-    &__bottom {
+    .side__bottom {
       height: calc(100vh - 100px);
       background-color: $less_dark_blue;
       padding: 0 20px;
       overflow: scroll;
       width: 260px;
 
+      .side__bottom__message {
 
-      .side__bottom__group-name {
-        font-size: 15px;
-        padding: 20px 0px 5px ;
-      }
+        .side__bottom__group-name {
+          font-size: 15px;
+          padding: 20px 0px 5px ;
+        }
 
-      .side__bottom__group-new-comment {
-        font-size: 11px;
-        padding: 20px 0px;
+        .side__bottom__group-new-comment {
+          font-size: 11px;
+          padding: 20px 0px;
+        }
       }
     }
   }
