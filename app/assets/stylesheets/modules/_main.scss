@@ -84,10 +84,10 @@
       height: 90px ;
 
       form {
-      background-color: $pale_gray;
-      padding: 20px 40px;
-      position: relative;
-      @include clearfix();
+        background-color: $pale_gray;
+        padding: 20px 40px;
+        position: relative;
+        @include clearfix();
 
         .message-content {
           height: 46px;
