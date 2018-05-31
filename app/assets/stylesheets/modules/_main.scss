@@ -4,7 +4,7 @@
       height: 100vh;
       float: right;
 
-    .main__top {
+    &__top {
       height: 99px;
       border-bottom: thin solid $light_gray;
       background-color: $white;
@@ -30,7 +30,7 @@
         }
       }
 
-      &__right {
+      .main__top__right {
         @include clearfix();
         width: 50%;
         float: right;
@@ -83,21 +83,19 @@
     &__footer {
       height: 90px ;
 
-
       form {
       background-color: $pale_gray;
       padding: 20px 40px;
       position: relative;
       @include clearfix();
+
         .message-content {
           height: 46px;
           width: calc(100% - 100px - 30px);
           float: left;
           padding-left: 10px;
-          &::-webkit-input-placeholder {
-            font-size: 16px;
-            color: $deep_blue;
-          }
+          font-size: 16px;
+          color: $deep_blue;
         }
         .submit {
           width: 100px;
