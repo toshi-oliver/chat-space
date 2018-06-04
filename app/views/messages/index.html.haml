@@ -1,13 +1,22 @@
 .wrapper
   .main
     .main__top
-      = render partial: "group-info"
+      .main__top__left
+        .main__top__group-name
+          = @group.name
+        .main__top__member-list
+          Member:
+          %span
+          - @group.users.each do |user|
+            = user.name
+
+      .main__top__right
+        = link_to 'Edit', edit_group_path(@group) , class: "group-edit"
 
     .main__body
       = render partial: "message" , collection: @messages
 
     .main__footer
-
       .form
         = form_for [@group, @message] do |f|
           =f.text_field :content, class: 'message-content', placeholder: "type a message"
