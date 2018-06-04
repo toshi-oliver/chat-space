@@ -4,7 +4,14 @@
       = render partial: "group-info"
 
     .main__body
-      = render partial: "message"
+      = render partial: "message" , collection: @messages
 
     .main__footer
-      = render partial: "form"
+
+      .form
+        = form_for [@group, @message] do |f|
+          =f.text_field :content, class: 'message-content', placeholder: "type a message"
+          = f.submit 'Send', class: 'submit'
+          = f.label :image do
+            = f.file_field :image, class: "picture"
+            = fa_icon 'image'

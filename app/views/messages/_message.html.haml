@@ -3,26 +3,8 @@
     ユーザー
   .main__body__posted-time
     2018/XX/XX XX:XX:XX
-  .main__body__user-message
-    こんにちは
-.main__body__messages
-  .main__body__user-name
-    ユーザー
-  .main__body__posted-time
-    2018/XX/XX XX:XX:XX
-  .main__body__user-message
-    こんにちは
-.main__body__messages
-  .main__body__user-name
-    ユーザー
-  .main__body__posted-time
-    2018/XX/XX XX:XX:XX
-  .main__body__user-message
-    こんにちは
-.main__body__messages
-  .main__body__user-name
-    ユーザー
-  .main__body__posted-time
-    2018/XX/XX XX:XX:XX
-  .main__body__user-message
-    こんにちは
+  .main__body__content
+    .content__text
+      = message.created_at.to_s(:datetime)
+    .content__imaage
+      = image_tag message.image if message.image.present?
