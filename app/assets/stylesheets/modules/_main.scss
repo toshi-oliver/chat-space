@@ -81,7 +81,7 @@
     &__footer {
       height: 90px ;
 
-      form {
+      .form {
         background-color: $pale_gray;
         padding: 20px 40px;
         position: relative;
@@ -95,7 +95,7 @@
           font-size: 16px;
           color: $deep_blue;
         }
-        
+
         .submit {
           width: 100px;
           height: 50px;

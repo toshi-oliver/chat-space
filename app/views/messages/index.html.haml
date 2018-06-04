@@ -8,16 +8,3 @@
 
     .main__footer
       = render partial: "form"
-
-  .side
-    .side__top
-      %h4.side__top__user-name
-        sample
-      .side__top__icons
-        = link_to "#" do
-          = fa_icon 'edit', class: 'icon'
-        = link_to "#" do
-          = fa_icon 'cog', class: 'icon'
-
-    .side__bottom
-      = render partial: "group-list"
