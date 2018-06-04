@@ -1,10 +1,10 @@
 .main__body__messages
   .main__body__user-name
-    ユーザー
+    = message.user.name
   .main__body__posted-time
-    2018/XX/XX XX:XX:XX
+    = message.created_at.to_s(:datetime)
   .main__body__content
     .content__text
-      = message.created_at.to_s(:datetime)
+      = message.content if message.content.present?
     .content__imaage
       = image_tag message.image if message.image.present?
