@@ -1,6 +1,5 @@
 $(function() {
   function buildHTML(message){
-    console.log(message.image)
     if (message.image) {
       var image = `<img src="${message.image}">`;
     } else {
@@ -40,7 +39,6 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      console.log(data.image)
       var html = buildHTML(data);
       $('.main__body').append(html)
       $('#new_message')[0].reset()
