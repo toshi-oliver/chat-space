@@ -41,7 +41,6 @@ $(function() {
     })
 
     .done(function(users) {
-      // console.log(users);
       $("#user-search-result").empty();
       if (users.length !== 0) {
         users.forEach(function(user){
