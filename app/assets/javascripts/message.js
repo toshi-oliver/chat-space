@@ -31,7 +31,7 @@ $(function() {
     $('#new_message')[0].reset()
     $('.main__body').animate({scrollTop:$('.main__body')[0].scrollHeight}, 'swing');
   }
-
+  
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -49,6 +49,7 @@ $(function() {
       buildhtml(html);
     })
     
+
     .fail(function() {
       alert('メッセージが送信されませんでした');
     })
