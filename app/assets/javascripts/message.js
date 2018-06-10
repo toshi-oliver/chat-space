@@ -48,11 +48,7 @@ $(function() {
       var html = buildHTML(data);
       buildhtml(html);
     })
-<<<<<<< HEAD
-=======
-    
 
->>>>>>> origin/add-incremental-search-function
     .fail(function() {
       alert('メッセージが送信されませんでした');
     })
