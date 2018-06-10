@@ -48,7 +48,6 @@ $(function() {
       var html = buildHTML(data);
       buildhtml(html);
     })
-    
     .fail(function() {
       alert('メッセージが送信されませんでした');
     })
