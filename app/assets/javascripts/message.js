@@ -26,12 +26,10 @@ $(function() {
     return html;
   }
 
-  function buildHTML(data){
-    var html = buildHTML(data);
-    $('.main__body').append(html)
+  function buildhtml(input){
+    $('.main__body').append(input)
     $('#new_message')[0].reset()
     $('.main__body').animate({scrollTop:$('.main__body')[0].scrollHeight}, 'swing');
-    return html;
   }
 
   $('#new_message').on('submit', function(e){
@@ -48,10 +46,9 @@ $(function() {
     })
     .done(function(data) {
       var html = buildHTML(data);
-      $('.main__body').append(html)
-      $('#new_message')[0].reset()
-      $('.main__body').animate({scrollTop:$('.main__body')[0].scrollHeight}, 'swing');
+      buildhtml(html);
     })
+    
     .fail(function() {
       alert('メッセージが送信されませんでした');
     })
