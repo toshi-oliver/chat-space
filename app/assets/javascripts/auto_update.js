@@ -24,34 +24,35 @@ $(function() {
       </div>
     `
     return html;
-  }
+  };
 
   function buildhtml(input){
     $('.main__body').append(input)
     $('#new_message')[0].reset()
     $('.main__body').animate({scrollTop:$('.main__body')[0].scrollHeight}, 'swing');
-  }
+  };
 
-  $('#new_message').on('submit', function(e){
-    e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action');
+  setInterval(update, 5000);
+
+  function update() {
+    var message_id = $('.main__body__messages:last').data('id');
+        console.log(message_id)
     $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
+      url: location.href,
+      type: 'GET',
+      data: {id: message_id},
+      dataType: 'json'
     })
     .done(function(data) {
-      var html = buildHTML(data);
+      if (data.length !== 0){
+      data.forEach(function(message){
+        var html = buildHTML(message);
       buildhtml(html);
+    });
+    }
     })
     .fail(function() {
-      alert('メッセージが送信されませんでした');
+      alert('自動更新に失敗しました');
     })
-    return false;
-    // 繰り返し処理を止める
-  })
-})
+  };
+});
