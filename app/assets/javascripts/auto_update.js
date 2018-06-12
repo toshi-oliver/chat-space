@@ -45,11 +45,11 @@ $(function() {
     })
     .done(function(data) {
       if (data.length !== 0){
-      data.forEach(function(message){
-        var html = buildHTML(message);
-      buildhtml(html);
-    });
-    }
+        data.forEach(function(message){
+          var html = buildHTML(message);
+          buildhtml(html);
+        })
+      }
     })
     .fail(function() {
       alert('自動更新に失敗しました');
