@@ -26,11 +26,6 @@ $(function() {
     return html;
   };
 
-  function buildhtml(input){
-    $('.main__body').append(input)
-    $('#new_message')[0].reset()
-  };
-
   function scroll(){
     $('.main__body').animate({scrollTop:$('.main__body')[0].scrollHeight}, 'swing');
   };
@@ -49,7 +44,7 @@ $(function() {
       if (data.length !== 0){
         data.forEach(function(message){
           var html = buildHTML(message);
-          buildhtml(html);
+          $('.main__body').append(html);
           scroll();
         })
       }
