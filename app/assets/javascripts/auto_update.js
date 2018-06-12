@@ -1,8 +1,8 @@
 $(function() {
   function buildHTML(message){
     if (message.image) {
-      var image = `<img src="${message.image}">`;
-    } else {
+      var image = `<img src="${message.image}">`;}
+    else {
       var image = '';
     }
     var html = `
@@ -24,34 +24,33 @@ $(function() {
       </div>
     `
     return html;
-  }
+  };
 
-  function buildhtml(input){
-    $('.main__body').append(input)
-    $('#new_message')[0].reset()
+  function scroll(){
     $('.main__body').animate({scrollTop:$('.main__body')[0].scrollHeight}, 'swing');
-  }
+  };
 
-  $('#new_message').on('submit', function(e){
-    e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action');
+  setInterval(update, 5000);
+
+  function update() {
+    var MessageId = $('.main__body__messages:last').data('id');
     $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
+      url: location.href,
+      type: 'GET',
+      data: {id: MessageId},
+      dataType: 'json'
     })
     .done(function(data) {
-      var html = buildHTML(data);
-      buildhtml(html);
+      if (data.length !== 0){
+        data.forEach(function(message){
+          var html = buildHTML(message);
+          $('.main__body').append(html);
+          scroll();
+        })
+      }
     })
     .fail(function() {
-      alert('メッセージが送信されませんでした');
+      alert('自動更新に失敗しました');
     })
-    return false;
-    // 繰り返し処理を止める
-  })
-})
+  };
+});
