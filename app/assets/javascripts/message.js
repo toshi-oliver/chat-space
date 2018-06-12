@@ -6,7 +6,7 @@ $(function() {
       var image = '';
     }
     var html = `
-      <div class="main__body__messages">
+      <div class="main__body__messages" data-id="${message.id}">
         <div class="main__body__user-name">
           ${message.user_name}
         </div>
@@ -31,7 +31,7 @@ $(function() {
     $('#new_message')[0].reset()
     $('.main__body').animate({scrollTop:$('.main__body')[0].scrollHeight}, 'swing');
   }
-  
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -48,10 +48,10 @@ $(function() {
       var html = buildHTML(data);
       buildhtml(html);
     })
-
     .fail(function() {
       alert('メッセージが送信されませんでした');
     })
     return false;
+    // 繰り返し処理を止める
   })
 })
