@@ -1,8 +1,8 @@
 $(function() {
   function buildHTML(message){
     if (message.image) {
-      var image = `<img src="${message.image}">`;
-    } else {
+      var image = `<img src="${message.image}">`;}
+    else {
       var image = '';
     }
     var html = `
@@ -29,18 +29,20 @@ $(function() {
   function buildhtml(input){
     $('.main__body').append(input)
     $('#new_message')[0].reset()
+  };
+
+  function scroll(){
     $('.main__body').animate({scrollTop:$('.main__body')[0].scrollHeight}, 'swing');
   };
 
   setInterval(update, 5000);
 
   function update() {
-    var message_id = $('.main__body__messages:last').data('id');
-        console.log(message_id)
+    var MessageId = $('.main__body__messages:last').data('id');
     $.ajax({
       url: location.href,
       type: 'GET',
-      data: {id: message_id},
+      data: {id: MessageId},
       dataType: 'json'
     })
     .done(function(data) {
@@ -48,6 +50,7 @@ $(function() {
         data.forEach(function(message){
           var html = buildHTML(message);
           buildhtml(html);
+          scroll();
         })
       }
     })
