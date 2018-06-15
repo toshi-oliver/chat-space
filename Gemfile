@@ -66,3 +66,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
 end
+
+group :production do
+  gem 'unicorn'
+end
