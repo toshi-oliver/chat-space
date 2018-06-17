@@ -35,24 +35,26 @@ $(function() {
   function update() {
     var MessageId = $('.main__body__messages:last').data('id');
     var url = location.pathname.match(/\/groups\/\d+\/messages/);
-    $.ajax({
-      url: url,
-      type: 'GET',
-      data: {id: MessageId},
-      dataType: 'json'
-    })
-    .done(function(data) {
-      if (data.length !== 0){
-        data.forEach(function(message){
-          var html = buildHTML(message);
-          console.log(html);
-          $('.main__body').append(html);
-          scroll();
-        })
-      }
-    })
-    .fail(function() {
-      alert('自動更新に失敗しました');
-    })
+    if(url){
+      $.ajax({
+        url: url,
+        type: 'GET',
+        data: {id: MessageId},
+        dataType: 'json'
+      })
+      .done(function(data) {
+        if (data.length !== 0){
+          data.forEach(function(message){
+            var html = buildHTML(message);
+            console.log(html);
+            $('.main__body').append(html);
+            scroll();
+          })
+        }
+      })
+      .fail(function() {
+        alert('自動更新に失敗しました');
+      })
+    };
   };
 });
